@@ -1,1 +1,1 @@
-#Teste
+This repository aims to gather useful files for automating the administration of Windows Server-based environments.
