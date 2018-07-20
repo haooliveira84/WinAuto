@@ -26,8 +26,8 @@ catch [TimeoutException]
 
 finally
   {
-  								    #Any cleanup code goes here/Tout code de nettoyage va ici
-   $port.Close() 					#closes serial connection/ferme la connexion Serial
+  								#Any cleanup code goes here/Tout code de nettoyage va ici
+   $port.Close() 				#closes serial connection/ferme la connexion Serial
   }
 
 return $Temperatura
