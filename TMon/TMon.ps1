@@ -5,7 +5,7 @@
 #Date: 20/07/2018
 
 $port= new-Object System.IO.Ports.SerialPort COM3,9600,None,8,one
-$port.ReadTimeout = 9000 		#Timeout is set to 9 seconds/Timeout est réglé sur 9 secondes
+$port.ReadTimeout = 9000 		    #Timeout is set to 9 seconds/Timeout est réglé sur 9 secondes
 $port.DtrEnable = "true"
 $port.open() 					#opens a serial connection/ouvre une connexion Serial
 
@@ -21,12 +21,12 @@ try
 
 catch [TimeoutException]
   {
-								#Error handling code here/Erreur de gestion du code ici
+						#Error handling code here/Erreur de gestion du code ici
   }
 
 finally
   {
-  								#Any cleanup code goes here/Tout code de nettoyage va ici
+  						#Any cleanup code goes here/Tout code de nettoyage va ici
    $port.Close() 				#closes serial connection/ferme la connexion Serial
   }
 
