@@ -20,25 +20,25 @@ wevtutil el | Foreach-Object {wevtutil cl "$_"}
 
 # Remove temp files located in "C:\Users\USERNAME\AppData\Local\Temp"
 # Supprimer les fichiers temporaires situés dans "C:\Users\USERNAME\AppData\Local\Temp"
-write-Host "Removendo arquivos desnecessários em $temp2." -ForegroundColor Magenta
+write-Host "Removendo arquivos desnecessários em $temp2." -ForegroundColor Yellow
 Remove-Item -Recurse  "$temp2\*" -Force -Verbose
 
 
 # Empty Recycle Bin
 # Poubelle de recyclage vide
 
-write-Host "Limpando a lixeira" -ForegroundColor Cyan
+write-Host "Limpando a lixeira" -ForegroundColor Yellow
 $objFolder.items() | ForEach-Object { remove-item $_.path -Recurse -Confirm:$false}
 
 # Remove Windows Temp Directory
 # Supprimer le répertoire temporaire de Windows
-write-Host "Removendo arquivos desnecessários em $WinTemp." -ForegroundColor Green
+write-Host "Removendo arquivos desnecessários em $WinTemp." -ForegroundColor Yellow
 Remove-Item -Recurse $WinTemp -Force
 
 # Running Disk Clean up Tool
 # Exécution de l'outil Nettoyage du disque
 
-write-Host "Executando tarefa de limpeza" -ForegroundColor Cyan
+write-Host "Executando tarefa de limpeza" -ForegroundColor Yellow
 cleanmgr /sagerun:1 | out-Null
 
 $([char]7)
