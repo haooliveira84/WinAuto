@@ -8,9 +8,9 @@
 # Afficher les services arrêtés
 
 
-Get-Service | ?{$_.Status -like 'Stopped'}
+Get-Service | Where-Object{$_.Status -like 'Stopped'}
 
-$stoppedServices = Get-WmiObject win32_service -Filter "startmode = 'manual' AND state != 'running'" | select -expand name
+$stoppedServices = Get-WmiObject win32_service -Filter "startmode = 'manual' AND state != 'running'" | Select-Object -expand name
 
 foreach ($stoppedService in $stoppedServices) {
   Set-Service -Service $stoppedService -Status Running
