@@ -50,9 +50,9 @@ write-Host "Espaço liberado (GB): " -ForegroundColor Yellow
 
 $result_fin=Get-WmiObject Win32_LogicalDisk -Filter 'DriveType = 3' |Foreach-Object {($_.FreeSpace)/1GB}
 
-$liberado=$result_ini-$result_fin
+$liberado=$result_fin-$result_ini
 
-[math]::Round(($liberado)*100, 2)
+[math]::Round(($liberado), 2)
 
 
 ##### End of the Script #####
