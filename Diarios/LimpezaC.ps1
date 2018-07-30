@@ -48,7 +48,7 @@ Start-Sleep 1
 
 write-Host "Espaço liberado (GB): " -ForegroundColor Yellow
 
-$result_fin=Get-WmiObject Win32_LogicalDisk -Filter 'DriveType = 3' |Foreach-Object {($_.FreeSpace)/1GB}
+$result_fin=Get-WmiObject Win32_LogicalDisk -Filter "DeviceID='C:'" |Foreach-Object {($_.FreeSpace)/1GB}
 
 $liberado=$result_fin-$result_ini
 
