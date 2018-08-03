@@ -20,10 +20,10 @@ $usuarios = @(Get-ADUser -filter * -Properties Company, SamAccountName, Name, Ma
 $resultado = @($usuarios | Select-Object Company, SamAccountName, Name, Mail, Department, Title, PasswordNeverExpires, Enabled, Created)
 
 # Ordenar pela Empresa (Company) A-Z
-$resultado = $resultado | Sort "Company" 
+$resultado = $resultado | Sort-Object "Company" 
 
 # Comente esta linha para nÃ£o exibir o resultado durante a execuÃ§Ã£o do script.
-$resultado | ft -auto 
+$resultado | Format-Table -auto 
 
 $tabela += $resultado | ConvertTo-Html -Fragment
  
@@ -71,4 +71,4 @@ $relatorio = $formatacao + $titulo + $tabela
 $relatorio | Out-File $arquivo -Encoding Utf8
 
 # Exportar para o formato CSV (ad-lista.csv)
-$resultado | Sort Company | Export-Csv AD_USER_DATA.csv -NoTypeInformation -Encoding Utf8
+$resultado | Sort-Object Company | Export-Csv AD_USER_DATA.csv -NoTypeInformation -Encoding Utf8
