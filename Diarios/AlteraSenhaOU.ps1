@@ -1,3 +1,9 @@
+<#
+CRIADO POR:   Rohan Scanavez
+E-MAIL:       rohangustavo@gmail.com.br
+OBJETIVO:     Trocar todas as senhas dos usuarios dentro de uma OU
+#>
+
 # Converter para string
 $pwd = "senha_desejada"
 $password = "senha_desejada"
