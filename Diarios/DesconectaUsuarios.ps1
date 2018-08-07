@@ -4,7 +4,7 @@
 #Name: Rohan Scanavez - Desconectar Usuarios
 #Date: 07/08/2018
 
-$data = Get-Date -format "dd/MM/yyyy" 
+$data = Get-Date
 
 # Se não existir o diretório, ele o cria
 # If the directory does not exist, it creates it
