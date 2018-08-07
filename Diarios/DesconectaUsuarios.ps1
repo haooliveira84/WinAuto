@@ -4,10 +4,11 @@
 #Name: Rohan Scanavez - Desconectar Usuarios
 #Date: 07/08/2018
 
+$data = Get-Date -format "dd/MM/yyyy" 
+
 # Se não existir o diretório, ele o cria
 # If the directory does not exist, it creates it
 # Si le répertoire n'existe pas, il le crée
-
 function Ensure-LogFilePath([string]$LogFilePath)
    {
  if (!(Test-Path -Path $LogFilePath)) 
@@ -71,8 +72,10 @@ $LogFile = $ENV:LOCALAPPDATA + "\DisconnectedSessions\" + "sessions_" + $([DateT
 [string]$IncludeStates = '^(Disc)$'
 Write-Log -Message "LIMPEZA DE SESSOES DESCONECTADAS"
 Write-Log -Message "================================"
+Write-Log -message $data
+Write-Log -Message "================================"
 $DisconnectedSessions = Get-Sessions | Where-Object {$_.State -match $IncludeStates -and $_.UserName -ne ""} | Select-Object ID, UserName
-Write-Log -Message "Sessoes finalizadas"
+Write-Log -Message "SESSOES FINALIZADAS"
 Write-Log -Message "-------------------"
 foreach ($session in $DisconnectedSessions)
 {
