@@ -5,12 +5,14 @@
 #Date: 03/08/2018
 
 $usuarios=Get-ADUser -Filter * -SearchBase "DC=by7,DC=corp"
+$buscar="wiki*"
 
 ForEach ($usuario in $usuarios){
 
-  $resultado=Get-ADPrincipalGroupMembership $usuario | Where-Object {$_.name -like "wiki*"}
-  if ($resultado.name -like "wiki*") { 
-   write-Host "Nome: $usuario.name" -ForegroundColor DarkBlue -BackgroundColor White
-   $resultado.name
+  $resultado_grupo=Get-ADPrincipalGroupMembership $usuario | Where-Object {$_.name -like $buscar}
+  if ($resultado_grupo.name -like $buscar) { 
+   $resultado_nome=$usuario.name
+   write-Host "Nome: $resultado_nome" -ForegroundColor DarkBlue -BackgroundColor White
+   $resultado_grupo.name
   }
 }
