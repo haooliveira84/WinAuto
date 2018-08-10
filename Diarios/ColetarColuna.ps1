@@ -1,5 +1,5 @@
 # O objetivo do script é executar o comanto ctstat, direcionar a saida para um arquivo de texto e ler uma informação em um coluna específica
-#Name: Rohan Scanavez - Monitor de temperatura (TMon v.1.0)
+#Name: Rohan Scanavez - Alerta do CTSTAT
 #Date: 10/08/2018
 
 # Definir localização do ctstat:
