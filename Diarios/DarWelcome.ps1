@@ -12,8 +12,6 @@ $smtpserver =   "dominio-com-br.mail.protection.outlook.com"
 $from =         "boasvindas@boasvindas.com.br"
 $subject =      "Bem vindo a EmpresaX"
 
-
-
 # Here we must customize the email that we will send
 # Ici, nous devons personnaliser l'e-mail que nous enverrons
 function cria-email($para_usuario)
@@ -53,14 +51,12 @@ function cria-report()
     write-host " " 
    }
 
-
 # Here, we do the research to identify our target users.   
 # Ici, nous effectuons la recherche pour identifier nos utilisateurs cibles.
 
 $users = Get-aduser -filter * -Properties created, mail | Where-Object {$_.created -gt (Get-Date).AddDays($data_criacao)}|select name,created, mail
 clear
 cria-report
-
 
 foreach ($user in $users) 
   {
