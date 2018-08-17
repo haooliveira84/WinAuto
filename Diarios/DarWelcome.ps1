@@ -54,8 +54,8 @@ function cria-report()
 # Here, we do the research to identify our target users.   
 # Ici, nous effectuons la recherche pour identifier nos utilisateurs cibles.
 
-$users = Get-aduser -filter * -Properties created, mail | Where-Object {$_.created -gt (Get-Date).AddDays($data_criacao)}|select name,created, mail
-clear
+$users = Get-aduser -filter * -Properties created, mail | Where-Object {$_.created -gt (Get-Date).AddDays($data_criacao)}|Select-Object name,created, mail
+Clear-Host
 cria-report
 
 foreach ($user in $users) 
