@@ -56,6 +56,7 @@ foreach ($coluna in $colunas)
           
           Write-Host -nonewline " "$colunas[$i+5].InnerText"\"
           Write-Host " "$colunas[$i+6].InnerText 
+          
         }
           
   $i++ 
