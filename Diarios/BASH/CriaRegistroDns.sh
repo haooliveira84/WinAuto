@@ -1,9 +1,4 @@
 #!/bin/bash
-# Script para criar registro A no DNS interno
-# Empresa: BySeven
-# Autor: Rohan Scanavez
-# Data: 24/08/2018
-# Versão 0.1
 
 usage="USAGE: sh ./CriaRegistroA.sh [registro] [ip]"
 
